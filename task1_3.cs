@@ -35,7 +35,7 @@ namespace OOAP
             int val = 20;
             stack.push(val);
             Assert.Equal(BoundedStackATD<int>.PUSH_OK, stack.get_push_status());
-            Assert.Equal(val, stack.peek());
+            Assert.Equal(1, stack.size());
         }
 
         [Fact]
@@ -81,7 +81,8 @@ namespace OOAP
         public void Peek_EmptyStack_FailedToFind()
         {
             BoundedStack<int> stack = new BoundedStack<int>();
-            stack.peek();
+            int result = stack.peek();
+            Assert.Equal(default(int), result);
             Assert.Equal(BoundedStack<int>.PEEK_ERR, stack.get_peek_status());
         }
     }
