@@ -32,10 +32,13 @@ namespace OOAP
         public const int GET_OK = 0;
         public const int GET_ERR = 1;
         public const int GET_NIL = -1;
+        public const int ADD_TO_EMPTY_OK = 0;
+        public const int ADD_TO_EMPTY_ERR = 1;
+        public const int ADD_TO_EMPTY_NIL = -1;
         // конструктор
         // постусловие: создан новый пустой список
         // public abstract LinkedListATD();
-        
+
         // команды
         // предусловие: список не пустой
         // постусловие: курсор установлен на первый узел
@@ -90,5 +93,6 @@ namespace OOAP
         public abstract int get_remove_status();
         public abstract int get_replace_status();
         public abstract int get_get_status();
+        public abstract int get_add_to_empty_status();
     }
 }
