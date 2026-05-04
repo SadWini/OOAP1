@@ -12,7 +12,7 @@ namespace OOAP
         public const int TAIL_ERR = 1;
         public const int TAIL_NIL = -1;
         public const int RIGHT_OK = 0;
-        public const int RIGHT_ERR = 1;
+        public const int RIGHT_ERR_NOT_RIGHTER_ELEMENT = 1;
         public const int RIGHT_NIL = -1;
         public const int PUT_RIGHT_OK = 0;
         public const int PUT_RIGHT_ERR = 1;
@@ -27,7 +27,7 @@ namespace OOAP
         public const int REMOVE_ERR = 1;
         public const int REMOVE_NIL = -1;
         public const int FIND_OK = 0;
-        public const int FIND_ERR = 1;
+        public const int FIND_ERR_NOT_FOUND = 1;
         public const int FIND_NIL = -1;
         public const int GET_OK = 0;
         public const int GET_ERR = 1;
