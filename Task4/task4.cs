@@ -43,7 +43,7 @@ namespace OOAP
         // постусловие: значение элемента по индексу index заменено на value
         public abstract void replace(int index, T value);
 
-        // постусловие: массив очищен, size = 0, capacity = initial_capacity (сброс к начальному состоянию)
+        // постусловие: массив очищен, size = 0, capacity = 16
         public abstract void clear();
 
         // запросы
