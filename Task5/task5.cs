@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OOAP
 {
-    public abstract class QueueATD<T>
+    public abstract class ParentQueueATD<T>
     {
         // статусы
         public const int DEQUEUE_OK = 0;
@@ -40,9 +40,9 @@ namespace OOAP
         public abstract int get_get_status();
     }
 
-    public class Queue<T> : QueueATD<T>
+    public class ParentQueue<T> : ParentQueueATD<T>
     {
-        private LinkedList<T> list; // основное хранилище очереди
+        protected LinkedList<T> list; // основное хранилище очереди
         private int dequeue_status;
         private int get_status;
 
