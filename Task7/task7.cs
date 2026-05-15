@@ -48,18 +48,26 @@ namespace OOAP
         private SlotState[] states; // хранилище состояний ячеек
         private int max_size; // максимальный размер
         private int count; // текущее количество элементов
-        private int step = 3; // Шаг пробирования 
+        private int step; // Шаг пробирования 
 
         private int put_status;
         private int remove_status;
 
         public HashTable(int max_size)
         {
+            if (max_size <= 0) max_size = 17;
+
             this.max_size = max_size;
             slots = new T[max_size];
             states = new SlotState[max_size];
             count = 0;
             
+            step = 3; 
+            while (GCD(step, this.max_size) != 1)
+            {
+                step++;
+            }
+
             put_status = PUT_NIL;
             remove_status = REMOVE_NIL;
         }
@@ -157,12 +165,23 @@ namespace OOAP
                 if (states[index] == SlotState.Empty || states[index] == SlotState.Deleted)
                     return index; 
                 
-                if (states[index] == SlotState.Filled && slots[index].Equals(value)))
+                if (states[index] == SlotState.Filled && slots[index].Equals(value))
                     return index;
                 
                 index = (index + step) % max_size;
             }
             return -1; 
+        }
+
+        private int GCD(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return Math.Abs(a);
         }
     }
 }
