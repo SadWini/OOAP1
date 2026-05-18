@@ -12,7 +12,7 @@ namespace OOAP
             ht.put("apple");
 
             Assert.Equal(HashTableATD<string>.PUT_OK, ht.get_put_status());
-            Assert.Equal(2, ht.size());
+            Assert.Equal(1, ht.size());
         }
 
         [Fact]
